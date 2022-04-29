@@ -3,7 +3,23 @@ from comments.serializer import CommentSerializer
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from .models import Comment
 # Create your views here.
+
+
+
+# See all comments
+@api_view(["GET"])
+@permission_classes([Allowany])
+def get_all_comments(request):
+    comments = Comment.objects.all()
+    serializer = CommentSerializer(comments, many = True)
+    return Response(serializer.data)
+
+
+
+
+
 
 
 @api_view(["POST"])
