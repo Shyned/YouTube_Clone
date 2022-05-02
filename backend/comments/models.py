@@ -9,3 +9,4 @@ class Comment(models.Model):
     text = models.CharField(max_length=255)
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)
+    depth = 1
