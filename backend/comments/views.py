@@ -11,11 +11,23 @@ from .models import Comment
 # See all comments
 @api_view(["GET"])
 @permission_classes([AllowAny])
+def get_all_comments(request):
+    comments = Comment.objects.all()
+    serializer = CommentSerializer(comments, many=True)
+    return Response(serializer.data)
+
+
+
+
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
 def get_comments(request, pk):
-    comments = get_object_or_404(Comment, pk=pk)
-    if request.method == 'GET':
-        serializer = CommentSerializer(comments)
-        return Response(serializer.data)
+        comments = get_object_or_404(Comment, pk=pk)
+        if request.method == 'GET':
+            serializer = CommentSerializer(comments)
+            if serializer.data.video_id == pk:
+                return Response(serializer.data)
 
 
 @api_view(["POST"])
