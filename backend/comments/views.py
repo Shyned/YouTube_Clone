@@ -1,4 +1,4 @@
-import re
+from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view, permission_classes
 from comments.serializer import CommentSerializer
 from rest_framework import status
@@ -11,8 +11,8 @@ from .models import Comment
 # See all comments
 @api_view(["GET"])
 @permission_classes([AllowAny])
-def get_all_comments(request, pk):
-    comments = Comment.objects.all(Comment, pk=pk)
+def get_comments(request, pk):
+    comments = get_object_or_404(Comment, pk=pk)
     if request.method == 'GET':
         serializer = CommentSerializer(comments)
         return Response(serializer.data)
