@@ -1,7 +1,7 @@
-from django.urls import path, include
+from django.urls import path
 from comments import views
 
 urlpatterns = [
-    path('all_comments/', views.get_all_comments),
+    path('<pk>/', views.get_all_comments),
     path('', views.comments_list),
 ]
