@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "606cce88-189e-42b3-877b-42aa3cc1ca58",
+		"name": "youtube-clone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_all_comments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/comments/get_all_comments/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"comments",
+						"get_all_comments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMzgxNjkzLCJpYXQiOjE2NTE1MTc2OTMsImp0aSI6IjVmYWMwY2JmNjg3ZDQ1ZjY4MzVjMzA3NDliYjUwZjRjIiwidXNlcl9pZCI6MywidXNlcm5hbWUiOiJuZWQiLCJmaXJzdF9uYW1lIjoibmVkIn0.mNNkk-3dcS5aNa85x09oltQRHaAbHMitd8ytAKxpdFE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": 3,\r\n    \"video_id\":\"gogle\",\r\n    \"text\":\"hello\",\r\n    \"likes\": 2,\r\n    \"dislikes\": 1\r\n\r\n\r\n\r\n\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/comments/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ned\",\r\n    \"password\":\"Hello@1989\",\r\n    \"email\":\"issiahmckeil2@gmail.com\",\r\n    \"first_name\": \"ned\",\r\n    \"last_name\": \"ed\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ned\",\r\n    \"password\":\"Hello@1989\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_by_video_id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMzkxNTQwLCJpYXQiOjE2NTE1Mjc1NDAsImp0aSI6IjFkZjVmMzMwYThhZTQ5ZDA5NTE0MzA1ZDhiZDQ4ZjA3IiwidXNlcl9pZCI6MywidXNlcm5hbWUiOiJuZWQiLCJmaXJzdF9uYW1lIjoibmVkIn0.wH3BSCusjQQuW12kl3ZJF4kTocIeb-RdR4s_6M1M0b4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/comments/videos/gogle/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"comments",
+						"videos",
+						"gogle",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reply_get_all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMzkxNTQwLCJpYXQiOjE2NTE1Mjc1NDAsImp0aSI6IjFkZjVmMzMwYThhZTQ5ZDA5NTE0MzA1ZDhiZDQ4ZjA3IiwidXNlcl9pZCI6MywidXNlcm5hbWUiOiJuZWQiLCJmaXJzdF9uYW1lIjoibmVkIn0.wH3BSCusjQQuW12kl3ZJF4kTocIeb-RdR4s_6M1M0b4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/replies/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"replies",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_reply",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMzkxNTQwLCJpYXQiOjE2NTE1Mjc1NDAsImp0aSI6IjFkZjVmMzMwYThhZTQ5ZDA5NTE0MzA1ZDhiZDQ4ZjA3IiwidXNlcl9pZCI6MywidXNlcm5hbWUiOiJuZWQiLCJmaXJzdF9uYW1lIjoibmVkIn0.wH3BSCusjQQuW12kl3ZJF4kTocIeb-RdR4s_6M1M0b4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":2,\r\n    \"comment_id\":2,\r\n    \"text\":\"made text\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/replies/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"replies",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

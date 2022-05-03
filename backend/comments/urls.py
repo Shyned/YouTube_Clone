@@ -5,7 +5,7 @@ urlpatterns = [
     # see all UA  request
     path('get_all_comments/', views.get_all_comments),
     # pk request
-    path('<pk>/', views.get_comments),
+    path('videos/<pk>/', views.get_by_id),
     # post request
     path('', views.comments_list),
 ]

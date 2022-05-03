@@ -20,14 +20,12 @@ def get_all_comments(request):
 
 
 
-@api_view(["GET"])
-@permission_classes([AllowAny])
-def get_comments(request, pk):
-        comments = get_object_or_404(Comment, pk=pk)
-        if request.method == 'GET':
-            serializer = CommentSerializer(comments)
-            if serializer.data.video_id == pk:
-                return Response(serializer.data)
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_by_id(request, pk):
+    comment = Comment.objects.filter(video_id = pk)
+    serializer = CommentSerializer(comment, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 @api_view(["POST"])

@@ -11,15 +11,19 @@ from django.shortcuts import get_object_or_404
 
 # See all comments
 
-@api_view(["GET"])
+@api_view(["GET", "POST"])
 @permission_classes([IsAuthenticated])
 def get_replies(request, pk):
-    replies = get_object_or_404(Reply, pk=pk)
-    if request.method == 'GET':
-        serializer = ReplySerializer(replies)
-        return Response(serializer.data)
-
-
+    if request.method == "GET":
+        replies = Reply.objects.filter(comment_id = pk)
+        serializer = ReplySerializer(replies, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    elif request.method == "POST":
+        serializer = ReplySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user, comment_id = pk)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -37,12 +41,12 @@ def get_replies(request, pk):
 
 
 
-@api_view(["POST"])
-@permission_classes([IsAuthenticated])
-def make_reply(request,pk):
-    if request.method == "POST":
-        serializer = ReplySerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(user=request.user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+# @api_view(["POST"])
+# @permission_classes([IsAuthenticated])
+# def make_reply(request,pk):
+#     if request.method == "POST":
+#         serializer = ReplySerializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save(user=request.user , comment_id = pk)
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
