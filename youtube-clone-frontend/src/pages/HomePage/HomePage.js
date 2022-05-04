@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-
+import "./HomePage.css"
 import axios from "axios";
 
 const HomePage = () => {
@@ -26,15 +26,19 @@ const HomePage = () => {
     };
     fetchCars();
   }, [token]);
+
+
+
   return (
     <div className="container">
-      <h1>Home Page for {user.username}!</h1>
-      {cars &&
-        cars.map((car) => (
-          <p key={car.id}>
-            {car.year} {car.make} {car.model}
-          </p>
-        ))}
+      <iframe id="ytplayer" type="text/html" width="800" height="600"
+      // make video / videos it's own jsx component
+        src="https://www.youtube.com/embed/M7lc1UVf-VE?&origin=http://example.com"
+        frameborder="0"></iframe>
+    
+      
+     
+      
     </div>
   );
 };

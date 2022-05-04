@@ -9,27 +9,44 @@ li {
 }
 
 .navBar {
-  background: steelblue;
+  background: #0F4C5C;
   box-shadow: 4px 2px 5px gray;
   color: white;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
+  display: flex;
 }
 
-.navBar button {
+.login-btn {
   background: transparent;
-  border: 2px solid white;
-  color: white;
+  border: none;
+  color: black;
   padding: 0.4rem 0.5rem;
 }
 
-.navBar button:hover {
-  background: white;
-  color: steelblue;
-  cursor: pointer;
-}
 
 .brand {
   cursor: pointer;
   font-size: 2rem;
+  background-color: #FB8B24;
+  margin-right: 1rem;
+  border: 1px solid gray;
+  border-radius: 20px;
+  height: 50px;
+  width: 3em;
+  
+}
+
+.bi-youtube{
+  fill: red;
+  width: 220px;
+  height: 165px;
+}
+
+.user-login{
+  background-color: aliceblue;
+  width: 6em;
+  height: 4em;
+  border: 2px solid grey;
+  border-radius: 20px;
 }
