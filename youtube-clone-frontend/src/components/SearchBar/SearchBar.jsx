@@ -5,14 +5,12 @@ const SearchBar = props => {
   function onChange(e) {
     let newValue = e.target.value;
     setSearch(newValue);
-    console.log(newValue);
+   
   }
   function handleSubmit(e) {
     e.preventDefault();
-    let newSearch = {
-      search: search,
-    };
-    console.log(newSearch);
+    let newSearch = search
+    props.searchKeyWord(newSearch)
   }
 
   return (

@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import VideoPage from "./components/VideoPages/VidepPage";
+import Searchpage from "./pages/searchpage/searchpage"
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -17,10 +18,13 @@ import useAuth from "../src/hooks/useAuth";
 
 
 function App() {
+
+
+
   const [user, token] = useAuth();
   return (
     <section>
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route
           path="/"
@@ -33,6 +37,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/videopage" element={<VideoPage />}></Route>
+        <Route path="/searchpage" element={<Searchpage />}></Route>
+
       </Routes>
       <Footer />
     </section>
