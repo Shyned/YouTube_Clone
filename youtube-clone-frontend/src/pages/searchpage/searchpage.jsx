@@ -32,10 +32,10 @@ const SearchPage = () => {
   return(
     <section>
         <SearchBar className = "Searchbar" searchKeyWord={findItem}/>
-        
+
     </section>
   )
 }
 
 
-export default SearchPage
+export default SearchPage;
