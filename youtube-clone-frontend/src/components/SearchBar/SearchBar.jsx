@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 const SearchBar = props => {
   const [search, setSearch] = useState("");
 
@@ -10,7 +9,10 @@ const SearchBar = props => {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("here");
+    let newSearch = {
+      search: search,
+    };
+    console.log(newSearch);
   }
 
   return (
