@@ -7,26 +7,6 @@ const HomePage = () => {
 
   const [user, token] = useAuth();
   
-  
-
-  // const fetchVideo = async () => {
-  //   try {
-  //     let response = await axios.get(
-  //       "https://www.googleapis.com/youtube/v3/search?q={search}&key={AIzaSyBlRavAu8R7mgPnfUyp8vN26FDguqYosuU}",
-  //       {
-  //         headers: {
-  //           Authorization: "Bearer " + token,
-  //         },
-  //       }
-  //     );
-  //     setSearch(response.data);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
-
-
-
 
   return (
   

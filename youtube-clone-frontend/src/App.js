@@ -36,8 +36,8 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/videopage" element={<VideoPage />}></Route>
-        <Route path="/searchpage" element={<Searchpage />}></Route>
+        <Route path="/videopage" element={<PrivateRoute><VideoPage/></PrivateRoute>}></Route>
+        <Route path="/searchpage" element={<PrivateRoute><Searchpage /></PrivateRoute>}></Route>
 
       </Routes>
       <Footer />
