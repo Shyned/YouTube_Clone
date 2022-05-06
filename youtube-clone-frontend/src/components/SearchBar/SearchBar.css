@@ -1,1 +1,29 @@
 
+.search-input{
+    width: 342px;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 30px;
+    border: 2px solid #0F4C5C;
+    box-shadow: 10px 15px 20px gray;
+}
+
+.btn-submit{
+    margin-left: 10px;
+    background-color: #B12429;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+    height: 35px;
+    width: 70px;
+    border-radius: 30px;
+    border: #0F4C5C solid 2px;
+
+}
+
+.btn-submit:hover{
+    background-color: aliceblue;
+    color: #B12429;
+    transform: scale(1.1);
+    
+}

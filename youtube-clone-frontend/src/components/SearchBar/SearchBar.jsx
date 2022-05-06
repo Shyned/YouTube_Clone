@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import"./SearchBar.css"
+
+
+
 const SearchBar = props => {
   const [search, setSearch] = useState("");
 
@@ -14,9 +18,10 @@ const SearchBar = props => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="search-area" onSubmit={handleSubmit}>
       <div>
         <input
+        className="search-input"
           type="search"
           placeholder="Search"
           search={search}
