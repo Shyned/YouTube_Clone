@@ -2,6 +2,7 @@ ul {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  gap: 15px;
 }
 
 li {
@@ -12,7 +13,6 @@ li {
   background: #0F4C5C;
   box-shadow: 4px 2px 5px gray;
   color: white;
-  margin-bottom: 2rem;
   padding: 1.5rem 2rem;
   display: flex;
 }
@@ -32,15 +32,18 @@ li {
   margin-right: 1rem;
   border: 1px solid gray;
   border-radius: 20px;
-  height: 50px;
-  width: 3em;
+  height: 40px;
+  width: 138px;
   
 }
 
 .bi-youtube{
   fill: red;
-  width: 220px;
+  width: 120px;
   height: 165px;
+  background-color: whites;
+  position: relative;
+  margin-right: 40px;
 }
 
 .user-login{
@@ -49,4 +52,17 @@ li {
   height: 4em;
   border: 2px solid grey;
   border-radius: 20px;
+}
+
+.nav-bar-links{
+  text-decoration: none;
+
+}
+.nav-bar-links:visited{
+  color: black;
+}
+.nav-items{
+  margin-top: auto;
+  margin-left: 200px;
+  
 }

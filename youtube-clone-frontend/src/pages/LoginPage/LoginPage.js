@@ -20,11 +20,12 @@ const LoginPage = () => {
 
   return (
    
-    <div className="container">
-      <form className="form" onSubmit={handleSubmit}>
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleSubmit}>
         <label>
           Username:{" "}
           <input
+          className="login-input-area"
             type="text"
             name="username"
             value={formData.username}
@@ -32,8 +33,9 @@ const LoginPage = () => {
           />
         </label>
         <label>
-          Password:{" "}
-          <input
+          Password{" "}
+          <input 
+          className="login-input-area"
             type="text"
             name="password"
             value={formData.password}
@@ -44,7 +46,7 @@ const LoginPage = () => {
           <p className="error">Login failed, incorrect credentials!</p>
         ) : null}
         <Link to="/register">Click to register!</Link>
-        <button>Login!</button>
+        <button className="form-login-btn">Login!</button>
       </form>
     </div>
   );
