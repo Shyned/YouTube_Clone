@@ -1,6 +1,6 @@
 .video-card{
     display: flex;
-    border: 2px black solid;
+    border: 2px #0F4C5C solid;
     width: 360px;
     height: 400px;
     gap: 30px;
@@ -8,4 +8,14 @@
     border-radius: 20px;
     margin-left: 30px;
     padding: 10px 10px 10px 10px;
+    background-color: white;
+    box-shadow: 11px 20px 20px #717171;
+}
+
+.video-card:hover{
+    transform: scale(1.1);
+}
+.search-thumbnail{
+    height: 300px;
+    width: 200px;
 }
