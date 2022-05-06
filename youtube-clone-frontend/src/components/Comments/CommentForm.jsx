@@ -1,16 +1,26 @@
 import axios from "axios";
 import React, { useState } from "react";
+import useAuth from "../../hooks/useAuth";
 
 const CommentForm = props => {
+  // valid user hook
+  const [user, token] = useAuth();
+
   const [comment, setComment] = useState("");
-  const [user, setUser] = useState("");
+  const [userId, setUser] = useState("");
   const [videoId, setVideoId] = useState("");
   const [likes, setLikes] = useState("");
   const [dislikes, setDislikes] = useState("");
+
+
   function handleSubmit(e) {
     e.preventDefault();
     let newComment = {
-      comment: comment,
+      user: userId,
+      videoId : videoId,
+      text: comment,
+      likes: likes,
+      dislikes :dislikes,
     };
     console.log(newComment);
     props.addNewComment(newComment);
@@ -39,15 +49,19 @@ const CommentForm = props => {
   //   function addNewComment(comment) {
   //     let composeComment = [comment, ...comments];
   //     setComments(composeComment);
+let test ={user: 3,
+videoId: "gogle",
+text: "HERE",
+likes: 2,
+dislikes: 1,}
+
+//  token and bearer
+//       {headers: {
+//         Authorization: "Bearer " + token,}
+//       })
 
   axios
-    .post("/comments", {
-      user: 3,
-      videoId: "gogle",
-      text: "hello",
-      likes: 2,
-      dislikes: 1,
-    })
+    .post("http://127.0.0.1:8000/api/comments/", test)
     .then(function (response) {
       console.log(response);
     })
@@ -67,7 +81,7 @@ const CommentForm = props => {
             className="user-input"
             type="text"
             placeholder="user"
-            user={user}
+            user={userId}
             onChange={e => setUser(e.target.value)}
           ></input>
           <input
