@@ -46,7 +46,7 @@ function getVideo(vid){
           return(
             // on click set current video to click video data to be passed to app.js to  video page
             // need to return video id 
-            <button onClick={null} className='video-card' key = {index}>
+            <button onClick={getVideo()} className='video-card' key = {index}>
             <img className='search-thumbnail' src = {video.snippet.thumbnails.high.url} alt='thumbnail'/>
               <p>{video.snippet.title}</p>
             </button>

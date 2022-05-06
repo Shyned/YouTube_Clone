@@ -6,8 +6,8 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import VideoPage from "./components/VideoPages/VidepPage";
-import Searchpage from "./pages/searchpage/searchpage"
+import VideoPage from "./components/VideoPages/VideoPage";
+import Searchpage from "./pages/searchpage/searchpage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -16,11 +16,7 @@ import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 import useAuth from "../src/hooks/useAuth";
 
-
 function App() {
-
-
-
   const [user, token] = useAuth();
   return (
     <section>
